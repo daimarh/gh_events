@@ -4,10 +4,17 @@ on:                // we have to defined our even in a new indented line
     types: 
       - opened
   workflow_dispatch:   // manual trigger , a second event ,  even there is not event , still have to put the ":"
-      
+  push:
+    branches:
+      - main
+      - 'dev-*'
+      - 'feat/**'
+    pathes:
+      - 'src/**'
+      - '.github/workflows/**'
 jobs:
   deploy:                         // job Deploy 
-    runs-on: ubuntu-lategit add st
+    runs-on: ubuntu-lategit 
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
