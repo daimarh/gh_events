@@ -1,8 +1,13 @@
 name: Events Demo 1
-on: ...
+on:                // we have to defined our even in a new indented line 
+  pull_request:
+    types: 
+      - opened
+  workflow_dispatch:   // manual trigger , a second event ,  even there is not event , still have to put the ":"
+      
 jobs:
-  deploy:
-    runs-on: ubuntu-latest
+  deploy:                         // job Deploy 
+    runs-on: ubuntu-lategit add st
     steps:
       - name: Output event data
         run: echo "${{ toJSON(github.event) }}"
