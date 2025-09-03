@@ -3,15 +3,7 @@ on:                // we have to defined our even in a new indented line
   pull_request:
     types: 
       - opened
-  workflow_dispatch:   // manual trigger , a second event ,  even there is not event , still have to put the ":"
-  push:
-    branches:
-      - main
-      - 'dev-*'
-      - 'feat/**'
-    pathes:
-      - 'src/**'
-      - '.github/workflows/**'
+  workflow_dispatch:   
 jobs:
   deploy:                         // job Deploy 
     runs-on: ubuntu-lategit 
